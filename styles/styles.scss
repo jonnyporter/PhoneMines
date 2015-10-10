@@ -1,0 +1,48 @@
+$font-stack: "CenturyGothic",Arial;
+
+$darker: #1d2023;
+
+$dark: #3D1255;
+
+$light: #764B8E;
+
+$lighter: white;
+
+body {
+	font-family: $font-stack;
+	color: $darker;
+}
+
+section {
+	background-color: $lighter;
+	margin: 0;
+	padding: 0;
+	color: $darker;
+}
+
+header {
+	background-color: $darker;
+	color: $lighter;
+	height:100vh;
+}
+
+header h1, header h2, header h3, header h4, header h5, header h6, header p {
+	text-align: center;
+}
+
+footer {
+	background-color: $darker;
+	color: $lighter; 
+	height: 25vh;
+}
+
+a {
+	color: coral;
+	transition: all 0.25s;
+}
+
+a:hover {
+	color: dodgerblue;
+	transition: all 0.25s;
+	text-decoration: none;
+}

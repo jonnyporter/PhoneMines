@@ -1,1 +1,4 @@
-var app = angular.module('phoneMines', []);
+var app = angular.module('phoneMines', [])
+.controller('MainController', function () {
+	
+})

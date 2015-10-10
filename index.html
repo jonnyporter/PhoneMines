@@ -1,17 +1,46 @@
 <html ng-app="phoneMines">
+
 <head>
 	<meta charset="UTF-8">
 	<title>PhoneMines</title>
-	 <link href="style.css">
-	 <link href="styles.scss">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body ng-controller="MainController">
-	<div class="title">
-	<h1>Welcome to the Phone Mines!</h1>
-	<h3>Pick what you would like in a phone below. We'll take care of the rest.</h3>
-	</div>
-	
+	<header>
+		<div class="container">
+
+			<h1>Welcome to the Phone Mines!</h1>
+			<h3>Pick what you would like in a phone below. We'll take care of the rest.</h3>
+			<input type="checkbox">
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<center>
+				<h1>Phone List</h1>
+				<hr>
+			</center>
+			<div class="page-header">
+				<h1>iPhone 6s</h1>
+				<img src="http://store.storeimages.cdn-apple.com/4735/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/gray/iphone6s-gray-select-2015?wid=470&hei=556&fmt=png-alpha&qlt=95&.v=1441814518766">
+				
+				</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="bottom-left">
+				<h4><a href="mailto:myctrring@gmail.com">Contact Us Here</a></h4>
+				<br/>
+				<h4>Made by <a href="http://llamageek.com" class="link">llamageek</a></h4>
+			</div>
+		</div>
+	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 	<script src="app.js"></script>
+	<script src="styles/style.js"></script>
 </body>
+
 </html>

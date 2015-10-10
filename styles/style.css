@@ -1,0 +1,31 @@
+body {
+  font-family: "CenturyGothic", Arial;
+  color: #1d2023; }
+
+section {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  color: #1d2023; }
+
+header {
+  background-color: #1d2023;
+  color: white;
+  height: 100vh; }
+
+header h1, header h2, header h3, header h4, header h5, header h6, header p {
+  text-align: center; }
+
+footer {
+  background-color: #1d2023;
+  color: white;
+  height: 25vh; }
+
+a {
+  color: coral;
+  transition: all 0.25s; }
+
+a:hover {
+  color: dodgerblue;
+  transition: all 0.25s;
+  text-decoration: none; }
