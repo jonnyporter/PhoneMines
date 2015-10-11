@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body ng-controller="MainController">
+<body ng-controller="MainController as vm">
 	<header>
 		<div class="container">
 
@@ -22,11 +22,16 @@
 				<h1>Phone List</h1>
 				<hr>
 			</center>
-			<div class="page-header">
-				<h1>iPhone 6s</h1>
-				<img src="http://store.storeimages.cdn-apple.com/4735/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/gray/iphone6s-gray-select-2015?wid=470&hei=556&fmt=png-alpha&qlt=95&.v=1441814518766">
-				
-				</div>
+			<div class="page-header" ng-repeat="phone in vm.phones">
+				<h1>{{phone.name}}</h1>
+				<img style="height: 40%" src="{{phone.imageUrl}}" />
+				<p class="info">
+					Manufacturer: {{phone.company}}
+					<br/> Operating System: {{phone.os}}
+					<br/> Screen Size: {{phone.screenSize}}
+				</p>
+
+			</div>
 		</div>
 	</section>
 	<footer>
