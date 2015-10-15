@@ -11,7 +11,7 @@ function MainController($http) {
 		this.features = features;
 	}
 	this.request = function (keyword) {
-		$http.post('http://phonemines.herokuapp.com/search.html', {
+		$http.post('https://phonemines.herokuapp.com/search.html', {
 			'category': 'Electronics',
 			'keywords': keyword
 		}).then(function (data) {
