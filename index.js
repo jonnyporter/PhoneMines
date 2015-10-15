@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var opHelper = new OperationHelper({
-    awsId: 'AKIAJTX5JRE2T45COOUA',
-    awsSecret: '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', 
-    assocId: 'phone0f4-20',
+    awsId: '',
+    awsSecret: '', 
+    assocId: '',
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extend: true }));
