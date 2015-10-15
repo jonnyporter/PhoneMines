@@ -1,25 +1,27 @@
 {
-  "name": "package.json",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "node-js-getting-started",
+  "version": "0.1.5",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3",
+    "body-parser": "^1.14.1",
+    "apac": "^1.0.0"
+  },
+  "engines": {
+    "node": "0.12.7"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://myctrring@github.com/myctrring/PhoneMines.git"
+    "type": "git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/myctrring/PhoneMines/issues"
-  },
-  "homepage": "https://github.com/myctrring/PhoneMines#readme",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sass": "^2.0.4"
-  }
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
