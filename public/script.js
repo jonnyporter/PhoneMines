@@ -1,4 +1,4 @@
-/* global data */
+
 var app = angular.module('PhoneMines', []);
 
 app.controller('MainController', MainController);

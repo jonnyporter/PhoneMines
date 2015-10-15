@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var opHelper = new OperationHelper({
-    awsId: '',
-    awsSecret: '', 
-    assocId: '',
+    awsId: 'AKIAJTX5JRE2T45COOUA',
+    awsSecret: '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', 
+    assocId: 'phone0f4-20',
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extend: true }));
@@ -34,6 +34,8 @@ function searchAmazon(category, keywords, cb){
 app.post('/search.html', function (req, res) {
     var category = req.body.category;
     var keywords = req.body.keywords;
+    console.log(req);
+    console.log(res);
     searchAmazon(category, keywords, function (err, results) {
         if (err) {
             console.log('There was an error from the amazon search ', err);
