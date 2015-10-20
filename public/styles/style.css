@@ -1,4 +1,5 @@
 body {
+  background-color: #1d2023;
   font-family: "CenturyGothic", Arial;
   color: #1d2023; }
 
@@ -11,12 +12,12 @@ section {
 header {
   background-color: #1d2023;
   color: white;
-  height: 50vh; }
+  height: 80vh; }
 
 header h1, header h2, header h3, header h4, header h5, header h6, header p {
   text-align: center; }
 
-footer {
+.footer {
   background-color: #1d2023;
   color: white;
   height: 25vh; }
@@ -32,14 +33,22 @@ a:hover {
   
 .phoneShowcase{
   display: inline-block;
+  border: 1px solid black;
+  width: 300px;
 }
-
+.phoneList{
+  height: 0%;
+}
 .button{
+  color: none;
   position: relative;
-  display: block;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+}
+img{
+  width: 300px;
 }
