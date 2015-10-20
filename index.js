@@ -17,11 +17,11 @@ app.use(bodyParser.urlencoded({ extend: true }));
 
 app.use('/', express.static(__dirname + '/public'));
 
-function searchAmazon(category, keywords, cb){
+function searchAmazon(browseNode, keywords, category, cb){
     opHelper.execute('ItemSearch', {
         'SearchIndex': category,
         'Keywords': keywords,
-        'BrowseNode': '2407749011',
+        'BrowseNode': browseNode,
         'ResponseGroup': 'Images,ItemAttributes',
     }, function (err, results) { // you can add a third parameter for the raw xml response, "results" here are currently parsed using xml2js
         if (err) { 
@@ -34,7 +34,8 @@ function searchAmazon(category, keywords, cb){
 app.post('/search.html', function (req, res) {
     var category = req.body.category;
     var keywords = req.body.keywords;
-    searchAmazon(category, keywords, function (err, results) {
+    var browseNode = req.body.browseNode;
+    searchAmazon(browseNode, keywords, category, function (err, results) {
         if (err) {
             console.log('There was an error from the amazon search ', err);
             return res.send(err);
