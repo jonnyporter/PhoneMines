@@ -9,15 +9,15 @@
 
 <body ng-controller="MainController as vm">
 	<header>
-		<div class="container">
+		<div class="container select">
 
 			<h1>Welcome to the Phone Mines!</h1>
 			<h3>Pick what you would like in a phone below. We'll take care of the rest.</h3>
-			<button class='reset' ng-click="vm.reset()">RESET</button> <br/>
+			<button class="reset" ng-click="vm.reset()">RESET</button> <br/>
 			<button class="button" ng-click="vm.request('Apple, iPhone')">iOS</button>
 			<button class="button" ng-click="vm.request('Android')">Android</button>
 			<button class="button" ng-click="vm.request('Camera')">Camera</button> <br/>
-			<button class="find" ng-click="vm.sendRequest()">Find</button>
+			<!--<button class="find" ng-click="vm.sendRequest()">Find</button>-->
 		</div>
 	</header>
 	<section>
@@ -44,6 +44,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 	<script src="https://rawgit.com/julianshapiro/velocity/master/velocity.min.js"></script>
+	<script src="https://rawgit.com/padolsey/sonic.js/master/src/sonic.js"></script>
 	<script src="jquery.js"></script>
 	<script src="script.js"></script>
 </body>

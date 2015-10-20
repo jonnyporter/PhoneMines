@@ -31,24 +31,33 @@ a:hover {
   transition: all 0.25s;
   text-decoration: none; }
   
-.phoneShowcase{
-  display: inline-block;
-  border: 1px solid black;
-  width: 300px;
-}
 .phoneList{
+  background-color: white;
   height: 0%;
 }
 .button{
-  color: none;
+  background-color: coral;
+  font-size: 20pt;
   position: relative;
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   width: 150px;
   height: 150px;
+  padding: 23px;
   border-radius: 50%;
 }
 img{
   width: 300px;
+}
+.container{
+  text-align: center;
+}
+.sonic{
+  display: inline-block;
+  position: relative;
+  visibility: hidden;
+  left: 46%;
+  top: -120px;
 }
