@@ -13,12 +13,13 @@ function MainController($http, $timeout) {
 		this.image = image;
 		this.features = features;
 	}
-	this.request = function (keyword) {
+	this.request = function (browseNode, keyword) {
 		$timeout(function () {
 			vm.keywords += ',' + keyword;
 			$http.post('http://localhost:1337/search.html', {
 				'category': 'Electronics',
-				'keywords': vm.keywords
+				'keywords': vm.keywords,
+				'browseNode': browseNode
 			}).then(function (data) {
 				for (var i = 0; i <= 5; i++) {
 					var attributes = data.data.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0];
