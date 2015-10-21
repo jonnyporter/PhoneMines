@@ -13,14 +13,21 @@ function MainController($http, $timeout) {
 		this.image = image;
 		this.features = features;
 	}
-	this.request = function (browseNode, keyword) {
+	var requestObject = {
+		'browseNode': '',
+		'category': 'Electronics',
+		'keywords': ''
+	}
+	vm.requestAdd = function(keywords, browseNode){
+		requestObject['browseNode'] = browseNode;
+		requestObject['keywords'] += keywords + ' ';
+		console.log(requestObject);
+	}
+	
+	this.request = function () {
 		$timeout(function () {
-			vm.keywords += ',' + keyword;
-			$http.post('http://localhost:1337/search.html', {
-				'category': 'Electronics',
-				'keywords': vm.keywords,
-				'browseNode': browseNode
-			}).then(function (data) {
+			$http.post('http://localhost:1337/search.html', requestObject).then(function (data) {
+				console.log(data);
 				for (var i = 0; i <= 5; i++) {
 					var attributes = data.data.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0];
 					var phone = new Phone(attributes.Title[0], attributes.Manufacturer[0], data.data.ItemSearchResponse.Items[0].Item[i].ImageSets[0].ImageSet[0].LargeImage[0].URL[0], attributes.Feature.join('.  '))
