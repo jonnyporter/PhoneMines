@@ -35,7 +35,7 @@ a:hover {
   background-color: white;
   height: 0%;
 }
-.button{
+.button, .iosButton{
   background-color: coral;
   font-size: 20pt;
   position: relative;
@@ -46,6 +46,7 @@ a:hover {
   width: 150px;
   height: 150px;
   padding: 23px;
+  border: none;
   border-radius: 50%;
 }
 img{
@@ -60,4 +61,10 @@ img{
   visibility: hidden;
   left: 46%;
   top: -120px;
+}
+.sec0{
+  position: relative;
+}
+.sec1, .sec2, .sec3, .sec4, .sec5{
+  display: none;
 }

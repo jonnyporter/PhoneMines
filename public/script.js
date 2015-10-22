@@ -13,20 +13,29 @@ function MainController($http, $timeout) {
 		this.image = image;
 		this.features = features;
 	}
-	var requestObject = {
+	vm.requestObject = {
 		'browseNode': '',
 		'category': 'Electronics',
-		'keywords': ''
+		'keywords': '',
+		'MaximumPrice': ''
+	}
+	vm.max = function(max){
+		vm.requestObject['MaximumPrice'] = max;
+		console.log(vm.requestObject);
+	}
+	vm.addKeyword = function(keyword){
+		vm.requestObject['keywords'] += keyword + ' ';
+		console.log(vm.requestObject);
 	}
 	vm.requestAdd = function(keywords, browseNode){
-		requestObject['browseNode'] = browseNode;
-		requestObject['keywords'] += keywords + ' ';
-		console.log(requestObject);
+		vm.requestObject['browseNode'] = browseNode;
+		vm.requestObject['keywords'] += keywords + ' ';
+		console.log(vm.requestObject);
 	}
 	
 	this.request = function () {
 		$timeout(function () {
-			$http.post('http://localhost:1337/search.html', requestObject).then(function (data) {
+			$http.post('http://localhost:1337/search.html', vm.requestObject).then(function (data) {
 				console.log(data);
 				for (var i = 0; i <= 5; i++) {
 					var attributes = data.data.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0];
