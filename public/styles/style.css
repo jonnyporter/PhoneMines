@@ -27,11 +27,14 @@ a {
   transition: all 0.25s; }
 
 a:hover {
-  color: dodgerblue;
+  color: purple;
   transition: all 0.25s;
   text-decoration: none; }
-  
+.top{
+  margin-bottom: 10%;
+}
 .phoneList{
+  text-align: center;
   background-color: white;
   height: 0%;
 }
@@ -43,8 +46,8 @@ a:hover {
   margin-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;;
   padding: 23px;
   border: none;
   border-radius: 50%;
@@ -60,11 +63,58 @@ img{
   position: relative;
   visibility: hidden;
   left: 46%;
-  top: -120px;
+  margin-top: 4%;
 }
 .sec0{
   position: relative;
 }
 .sec1, .sec2, .sec3, .sec4, .sec5{
   display: none;
+}
+.phonePhoto0{
+  width: 240px;
+}
+.phoneDiv0{
+  border: 1px dashed black;
+  border-radius: 10%;
+  margin-left: -15%;
+  position: absolute;
+  display: inline-block;
+  width: 30%;
+}
+.phonePhoto1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  max-height:400px;
+  width: auto;
+  height: auto;
+}
+.phoneDiv1{
+  margin-top: 6%;
+  margin-left: -50%;
+  position: absolute;
+  display: inline-block;
+  width: 30%;
+}
+.phonePhoto2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  max-height:400px;
+  width: auto;
+  height: auto;
+}
+.phoneDiv2{
+  margin-top: 6%;
+  width: 30%;
+  position: absolute;
+  display: inline-block;
+  margin-left: 20%;
+}
+.reset{
+  display: none;
+  margin-left: 12%;
 }

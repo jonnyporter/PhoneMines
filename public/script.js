@@ -7,11 +7,11 @@ function MainController($http, $timeout) {
 	vm.phones = [];
 	vm.finalPhones = [];
 	vm.keywords = '';
-	function Phone(name, make, image, features) {
+	function Phone(name, image, link, num) {
 		this.name = name;
-		this.make = make;
 		this.image = image;
-		this.features = features;
+		this.link = link;
+		this.num = num;
 	}
 	vm.requestObject = {
 		'browseNode': '',
@@ -19,6 +19,9 @@ function MainController($http, $timeout) {
 		'keywords': '',
 		'MaximumPrice': ''
 	}
+	$('.reset').on('click', function(){
+		vm.requestObject = {};
+	})
 	vm.max = function(max){
 		vm.requestObject['MaximumPrice'] = max;
 		console.log(vm.requestObject);
@@ -32,14 +35,13 @@ function MainController($http, $timeout) {
 		vm.requestObject['keywords'] += keywords + ' ';
 		console.log(vm.requestObject);
 	}
-	
 	this.request = function () {
 		$timeout(function () {
-			$http.post('http://localhost:1337/search.html', vm.requestObject).then(function (data) {
+			$http.post('https://phonemines.herokuapp.com/search', vm.requestObject).then(function (data) {
 				console.log(data);
-				for (var i = 0; i <= 5; i++) {
+				for (var i = 0; i <= 2; i++) {
 					var attributes = data.data.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0];
-					var phone = new Phone(attributes.Title[0], attributes.Manufacturer[0], data.data.ItemSearchResponse.Items[0].Item[i].ImageSets[0].ImageSet[0].LargeImage[0].URL[0], attributes.Feature.join('.  '))
+					var phone = new Phone(attributes.Title[0], data.data.ItemSearchResponse.Items[0].Item[i].ImageSets[0].ImageSet[0].LargeImage[0].URL[0], data.data.ItemSearchResponse.Items[0].Item[i].DetailPageURL[0], i)
 					vm.phones.push(phone)
 				};
 				$timeout(function () {
@@ -65,34 +67,31 @@ function MainController($http, $timeout) {
 		vm.keywords = '';
 	}
 }
-var square = new Sonic({
+var square = new Sonic(
 
-	width: 100,
-	height: 50,
-	padding: 10,
+	{
 
-	stepsPerFrame: 2,
-	trailLength: 1,
-	pointDistance: .03,
+		width: 100,
+		height: 50,
 
-	strokeColor: '#FF7B24',
+		stepsPerFrame: 1,
+		trailLength: 1,
+		pointDistance: .1,
+		fps: 15,
+		padding: 10,
+		//step: 'fader',
 
-	step: 'fader',
+		fillColor: 'coral',
 
-	multiplier: 2,
+		setup: function() {
+			this._.lineWidth = 20;
+		},
 
-	setup: function () {
-		this._.lineWidth = 5;
-	},
-
-	path: [
-
-		['arc', 10, 10, 10, -270, -90],
-		['bezier', 10, 0, 40, 20, 20, 0, 30, 20],
-		['arc', 40, 10, 10, 90, -90],
-		['bezier', 40, 0, 10, 20, 30, 0, 20, 20]
-	]
-});
+		path: [
+			['line', 0, 20, 100, 20],
+			['line', 100, 20, 0, 20]
+		]
+	});
 
 square.play();
 $('.select').append(square.canvas);

@@ -14,7 +14,6 @@ var opHelper = new OperationHelper({
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extend: true }));
-
 app.use('/', express.static(__dirname + '/public'));
 
 function searchAmazon(browseNode, category, keywords, maxPrice, cb){
@@ -23,7 +22,10 @@ function searchAmazon(browseNode, category, keywords, maxPrice, cb){
         'Keywords': keywords,
         'BrowseNode': browseNode,
         'MaximumPrice': maxPrice,
+        'Condition': 'New',
+        'Availability': 'Available',
         'ResponseGroup': 'Images,ItemAttributes',
+        'Sort': 'salesrank'
     }, function (err, results) { // you can add a third parameter for the raw xml response, "results" here are currently parsed using xml2js
         if (err) { 
             return cb(err);
@@ -32,7 +34,7 @@ function searchAmazon(browseNode, category, keywords, maxPrice, cb){
     });
 }
 
-app.post('/search.html', function (req, res) {
+app.post('/search', function (req, res) {
     var category = req.body.category;
     var keywords = req.body.keywords;
     var browseNode = req.body.browseNode;
