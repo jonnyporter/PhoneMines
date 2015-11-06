@@ -1,4 +1,6 @@
 body {
+  overflow-y: scroll;
+  overflow-x: hidden;
   background-color: #1d2023;
   font-family: "CenturyGothic", Arial;
   color: #1d2023; }
@@ -11,8 +13,7 @@ section {
 
 header {
   background-color: #1d2023;
-  color: white;
-  height: 80vh; }
+  color: white; }
 
 header h1, header h2, header h3, header h4, header h5, header h6, header p {
   text-align: center; }
@@ -71,12 +72,17 @@ img{
 .sec1, .sec2, .sec3, .sec4, .sec5{
   display: none;
 }
+.phoneList h1{
+  font-weight: bold;
+  font-family: "Arial";
+}
 .phonePhoto0{
   width: 240px;
 }
 .phoneDiv0{
   border: 1px dashed black;
-  border-radius: 10%;
+  padding: 10px;
+  border-radius: 7%;
   margin-left: -15%;
   position: absolute;
   display: inline-block;
@@ -117,4 +123,18 @@ img{
 .reset{
   display: none;
   margin-left: 12%;
+}
+.reset{
+  background-color: coral;
+  font-size: 20pt;
+  position: relative;
+  display: inline-block;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 200px;
+  height: 200px;;
+  padding: 23px;
+  border: none;
+  border-radius: 50%;
+  display: none;
 }

@@ -44,6 +44,7 @@
 				<button class="button final" ng-click="vm.request()">No</button>
 				<button class="button final" ng-click="vm.addKeyword('expandable up to'); vm.request()">Yes</button>
 			</div>
+			<button class="reset" ng-click="vm.reset();">RESET</button>
 		</div>
 	</header>
 	<section>
@@ -52,9 +53,10 @@
 			<div class="phoneShowcase" ng-repeat="phone in vm.finalPhones">
 				<div class="phoneDiv{{phone.num}}">
 				<h3 class="phoneName{{phone.num}}">{{phone.name}}</h3>
+				<h4>{{phone.price}}</h4>
 				<img class="phonePhoto{{phone.num}}" ng-src="{{phone.image}}"></img>
 				<p class="phoneFeatures{{phone.num}}">{{phone.features}}</p>
-				<button class="btn btn-default" type="button"><a href="{{phone.link}}">SEE MORE!</a></button>
+				<button class="btn btn-default" type="button"><a href="{{phone.link}}" target="_blank">SEE MORE!</a></button>
 				</div>
 			</div>
 		</div>

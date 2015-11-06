@@ -24,7 +24,7 @@ function searchAmazon(browseNode, category, keywords, maxPrice, cb){
         'MaximumPrice': maxPrice,
         'Condition': 'New',
         'Availability': 'Available',
-        'ResponseGroup': 'Images,ItemAttributes',
+        'ResponseGroup': 'Images, ItemAttributes, Offers',
         'Sort': 'salesrank'
     }, function (err, results) { // you can add a third parameter for the raw xml response, "results" here are currently parsed using xml2js
         if (err) { 
